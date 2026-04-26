@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1565C0</color>
+    <color name="colorPrimaryVariant">#0D47A1</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSecondary">#0288D1</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+    <color name="status_ok">#2E7D32</color>
+    <color name="status_error">#C62828</color>
+    <color name="status_idle">#546E7A</color>
+    <color name="log_bg">#0D1117</color>
+    <color name="log_text">#8B949E</color>
+    <color name="surface_variant">#E3F2FD</color>
+</resources>

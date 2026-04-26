@@ -1,0 +1,9 @@
+-keep class com.wireguard.** { *; }
+-keep class org.bouncycastle.** { *; }
+-dontwarn org.bouncycastle.**
+-dontwarn okhttp3.**
+-dontwarn okio.**
+-keep class okhttp3.** { *; }
+-keep class org.json.** { *; }
+-keep class com.fasterxml.uuid.** { *; }
+-keep public class dev.yakovsava.antiwhitelist.service.** { *; }

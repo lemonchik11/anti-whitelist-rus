@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menu_save"        android:title="Сохранить"          app:showAsAction="always"
+          android:icon="@drawable/ic_save"/>
+    <item android:id="@+id/menu_import_conf" android:title="Импорт .conf"       app:showAsAction="never"/>
+    <item android:id="@+id/menu_gen_keys"    android:title="Генерировать ключи" app:showAsAction="never"/>
+</menu>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:titleTextColor="@android:color/white"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- ── Основное ─────────────────────────────────────────────── -->
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Основное" android:textSize="12sp" android:textAllCaps="true"
+                android:textColor="?attr/colorPrimary" android:layout_marginBottom="6dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="Название профиля">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etName" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:hint="Тип звонка">
+                <Spinner android:id="@+id/spinnerLinkType"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="Ссылка на звонок ВК / Яндекс">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCallLink" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:inputType="textUri" android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- ── WireGuard ────────────────────────────────────────────── -->
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="WireGuard" android:textSize="12sp" android:textAllCaps="true"
+                android:textColor="?attr/colorPrimary" android:layout_marginBottom="6dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="Приватный ключ клиента (base64)">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/etPrivKey"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="textVisiblePassword" android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="Публичный ключ сервера (base64)">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/etServerPk"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="textVisiblePassword" android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="PresharedKey (необязательно)">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/etPsk"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="textVisiblePassword" android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="Адрес клиента (напр. 10.8.0.2/32)">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/etAddress"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="text" android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="DNS">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/etDns"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="text" android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="8dp">
+                <com.google.android.material.textfield.TextInputLayout android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginEnd="6dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" android:hint="MTU">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@+id/etMtu"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="number" android:singleLine="true"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="6dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" android:hint="Keepalive (сек)">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@+id/etKeepalive"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="number" android:singleLine="true"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="AllowedIPs">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/etAllowedIps"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="text" android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="16dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="Endpoint из .conf (оригинальный IP:порт сервера)">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/etRealEndpoint"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="text" android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- ── Good-Turn сервер ──────────────────────────────────────── -->
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Good-Turn сервер" android:textSize="12sp" android:textAllCaps="true"
+                android:textColor="?attr/colorPrimary" android:layout_marginBottom="6dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="8dp">
+                <com.google.android.material.textfield.TextInputLayout android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="2" android:layout_marginEnd="6dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:hint="IP сервера (пусто = из Endpoint)">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@+id/etGoodTurnHost"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="textUri" android:singleLine="true"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="6dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" android:hint="Порт">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@+id/etGoodTurnPort"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="number" android:singleLine="true"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- ── Опции ─────────────────────────────────────────────────── -->
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Опции" android:textSize="12sp" android:textAllCaps="true"
+                android:textColor="?attr/colorPrimary" android:layout_marginBottom="6dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="Override TURN server (необязательно)">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/etTurnOverride"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="textUri" android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="Кол-во соединений (0 = авто: 16 ВК / 1 Яндекс)">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/etConnCount"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="number" android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switchWgEnabled"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Поднимать WireGuard VPN" android:layout_marginBottom="4dp" android:checked="true"/>
+            <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switchUdp"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Подключение к TURN через UDP (по умолч. TCP)" android:layout_marginBottom="4dp"/>
+            <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switchNoDtls"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Без DTLS (прямой режим, небезопасно)" android:layout_marginBottom="4dp"/>
+            <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switchStartOnBoot"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Запускать при загрузке устройства" android:layout_marginBottom="16dp"/>
+
+            <!-- Buttons -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnSave"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginEnd="6dp" android:text="Сохранить"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnCancel"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginStart="6dp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:text="Отмена"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
